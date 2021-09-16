@@ -72,7 +72,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+https://github.com/prashantkhopkar/cyberbootcamp2021/blob/main/Images/ELK%20Container.PNG
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -86,7 +86,12 @@ We have installed the following Beats on these machines:
 Installed on Web 1 and Web 2
 These Beats allow us to collect the following information from each machine:
 - Filebeats collects system type events such as logins to see who is actively logging into the system.
+
+https://github.com/prashantkhopkar/cyberbootcamp2021/blob/main/Images/FielBeats%20Dashboard%20Example.png
+
 - Metricbeats collects useful information about the container, cpu, disk, memory and network.
+
+https://github.com/prashantkhopkar/cyberbootcamp2021/blob/main/Images/MetricBeat%20Dashboard%20Example.png
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
@@ -94,18 +99,49 @@ In order to use the playbook, you will need to have an Ansible control node alre
 SSH into the control node and follow the steps below:
 - Copy the elk_install.yml file to /etc/ansible/roles/ansibleelkserverplaybook.yml.
 - Update the hosts file to include the elk attribute [elkservers] and include destination ip of the ELK server directly below
+https://github.com/prashantkhopkar/cyberbootcamp2021/blob/main/Images/Update%20Hosts%20File%20with%20Server%20Info_1.png
+
+https://github.com/prashantkhopkar/cyberbootcamp2021/blob/main/Images/Update%20Hosts%20File%20with%20Server%20Info_2.png
+
 - Run the playbook, and navigate to http://13.67.229.27: 5601/app/kibana#/home to check that the installation worked as expected.
 
+https://github.com/prashantkhopkar/cyberbootcamp2021/blob/main/Images/Kibana%20Picture.png
+
 1. On the jumpbox run the following command to get the playbook:
-curl https://github.com/prashantkhopkar/....
+curl https://github.com/prashantkhopkar/cyberbootcamp2021/blob/main/Ansible/ansibleelkserverplaybook.yml
 
 2. Edit the hosts file in /etc/ansible and add the details from the screen shot and update your ip address:
 include link to the images
+
+https://github.com/prashantkhopkar/cyberbootcamp2021/blob/main/Images/Update%20Hosts%20File%20with%20Server%20Info_2.png
 
 3.To run the Playbook: ansible-playbook
 /etc/ansible/roles/anisbleelkserverplaybook.yml
 
 4.To check if installation is successful navigate via browser the following http://13.67.229.27:5601/app/kibana#/home
 
-5.  
+https://github.com/prashantkhopkar/cyberbootcamp2021/blob/main/Images/Kibana%20Picture.png
+
+5. Installing Filebeats
+a. Download the playbook with the following command and save to the /etc/ansible/roles
+curl https://github.com/prashantkhopkar/cyberbootcamp2021/blob/main/Ansible/filebeat-playbook.yml
+
+b. Run the playbook with ansible-playbook command
+/etc/ansible/roles/filebeat_playbook.yml
+
+c. Successful installation and navigating to Kibana via the link mentioned above
+
+https://github.com/prashantkhopkar/cyberbootcamp2021/blob/main/Images/FielBeats%20Dashboard%20Example.png
+
+6. Installing metricbeats
+a. Download the playbook with the following command and download and save to the /etc/ansible/roles
+curl https://github.com/prashantkhopkar/cyberbootcamp2021/blob/main/Ansible/metricbeatplaybook.yml
+b. Run the playbook with ansible-playbook
+/etc/ansible/roles/metricbeat_playbook.yml
+c. Successful installation and navigating to Kibana via the link mentioned above
+
+https://github.com/prashantkhopkar/cyberbootcamp2021/blob/main/Images/MetricBeat%20Module%20Status%20Picture.png
+
+https://github.com/prashantkhopkar/cyberbootcamp2021/blob/main/Images/Metricbeats%20Dashboard%20Picture%202.png
+
 
