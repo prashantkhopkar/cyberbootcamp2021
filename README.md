@@ -3,6 +3,7 @@
 The files in this repository were used to configure the network depicted below.
 
 https://github.com/prashantkhopkar/cyberbootcamp2021/blob/main/Images/Network%20Topplogy.PNG
+![image](https://user-images.githubusercontent.com/83466220/133692941-f4f87d1b-f262-4f8b-bb08-514d54ee6b5b.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the filebeat-playbook.yml file may be used to install only certain pieces of it, such as Filebeat.
 
